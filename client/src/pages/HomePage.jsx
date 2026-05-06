@@ -1,4 +1,5 @@
 import SearchBar from '../components/SearchBar';
+import TutorCard from '../components/TutorCard';
 export default function HomePage() {
   return (
     <main className="relative overflow-hidden">
@@ -75,6 +76,9 @@ export default function HomePage() {
             <p className="text-slate-600">2 tutors available</p>
           </div>
         </div>
+        <TutorCard />
+        <TutorCard />
+        
       </section>
     </main>
   );
