@@ -156,7 +156,11 @@ export default function TutorProfilePage() {
               </h2>
               <p className="text-slate-600">{tutor.responseTime}</p>
             </div>
-            <BookingForm />
+            <BookingForm
+              tutorId={tutor._id || tutor.id}
+              tutorName={tutor.name}
+              onSuccess={handleBookingSuccess}
+            />
           </section>
           <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft">
             <div className="mb-5 flex items-center justify-between">

@@ -53,6 +53,10 @@ export default function HomePage() {
     };
     loadTutors();
   }, [filters]);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFilters((current) => ({ ...current, [name]: value }));
+  };
 
   return (
     <main className="relative overflow-hidden">
@@ -124,7 +128,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl space-y-8 px-4 pb-20 sm:px-6 lg:px-8">
         <SearchBar
           filters={filters}
-          onchange={handleChange}
+          onChange={handleChange}
           onReset={() => setFilters(defaultFilters)}
           subjects={subjectOptions}
           availabilities={availabilityOptions}
@@ -159,8 +163,6 @@ export default function HomePage() {
             ))}
           </div>
         )}
-        <TutorCard />
-        <TutorCard />
       </section>
     </main>
   );
