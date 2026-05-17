@@ -1,0 +1,1 @@
+export const timeSlots = ["9:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "4:00 PM", "6:30 PM"];

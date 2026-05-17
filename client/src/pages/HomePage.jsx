@@ -1,6 +1,59 @@
+import { useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import TutorCard from '../components/TutorCard';
+
+const defaultFilters = {
+  search: '',
+  subject: '',
+  availability: '',
+  maxRate: '',
+};
+const subjectOptions = [
+  'math',
+  'SAT',
+  'Algebra',
+  'Physics',
+  'Calculus',
+  'English',
+  'Essay Writing',
+  'Literature',
+  'JavaScript',
+  'React',
+  'Web Development',
+];
+
+const availabilityOptions = [
+  'Weekeninghts',
+  'Saturday Mornings',
+  'Afternoons',
+  'Sunday Mornings',
+  'Flexible',
+  'Evenings',
+  'Weekends',
+];
+
 export default function HomePage() {
+  const [filters, setFilters] = useState(defaultFilters);
+  const [tutors, setTutors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const loadTutors = async () => {
+      try {
+        setLoading(true);
+        const data = await fetchTutors(filters);
+        setTutors(data);
+        setError('');
+      } catch (err) {
+        setError('We coundnot load tutors right now.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadTutors();
+  }, [filters]);
+
   return (
     <main className="relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-96 bg-glow" />
@@ -69,16 +122,45 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl space-y-8 px-4 pb-20 sm:px-6 lg:px-8">
-        <SearchBar />
+        <SearchBar
+          filters={filters}
+          onchange={handleChange}
+          onReset={() => setFilters(defaultFilters)}
+          subjects={subjectOptions}
+          availabilities={availabilityOptions}
+        />
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-3xl font-bold text-slate-900">Browse tutors</h2>
-            <p className="text-slate-600">2 tutors available</p>
+            <p className="text-slate-600">
+              {loading ? 'Loading...' : `${tutors.length}tutors available`}
+            </p>
           </div>
         </div>
+
+        {error && (
+          <div className="rounded-2xl bg-rose-50 px-4 py-3 text-rose-700">
+            {error}
+          </div>
+        )}
+        {loading ? (
+          <div className="grid gap-6 md:grid-cols-2">
+            {[1, 2, 3, 4].map((item) => (
+              <div
+                key={item}
+                className="h-80 animate-pluse rounded-[2rem] bg-white/70 shadow-soft"
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-2">
+            {tutors.map((tutor) => (
+              <TutorCard key={tutor._id || tutor.id} tutor={tutor} />
+            ))}
+          </div>
+        )}
         <TutorCard />
         <TutorCard />
-        
       </section>
     </main>
   );
