@@ -14,7 +14,7 @@ export const seedTutors = [
     languages: ["English", "Amharic"],
     responseTime: "Usually replies within 1 hour",
     image:
-      "https://unsplash.com/photos/a-smiling-black-man-wearing-a-black-sweatshirt-aPnIGxGUV68",
+      "https://images.unsplash.com/photo-1769636929354-59165ba73c7e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: true
   },
   {
@@ -32,7 +32,7 @@ export const seedTutors = [
     languages: ["English", "Swahili"],
     responseTime: "Usually replies within 2 hours",
     image:
-      "https://unsplash.com/photos/selective-focus-of-man-smiling-during-daytime-2EGNqazbAMk",
+      "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: true
   },
   {
@@ -50,7 +50,7 @@ export const seedTutors = [
     languages: ["English"],
     responseTime: "Usually replies within 45 minutes",
     image:
-      "https://unsplash.com/photos/portrait-of-afro-business-woman-holding-a-digital-tablet-while-standing-outdoors-on-the-street-business-and-urban-concept-fPXnJyh9fe8",
+      "https://plus.unsplash.com/premium_photo-1661645263199-63ede03daabb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: false
   },
   {
@@ -68,7 +68,7 @@ export const seedTutors = [
     languages: ["English", "Amharic"],
     responseTime: "Usually replies within 30 minutes",
     image:
-      "https://unsplash.com/photos/tilt-shift-lens-photography-of-man-standing-beside-trees-HA5dnKnt6TQ",
+      "https://images.unsplash.com/photo-1525665363629-cdf85a703b50?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: true
   }
 ];

@@ -8,7 +8,7 @@ const tutorSchema = new mongoose.Schema({
     hourlyRate:{type: Number, required: true},
     rating:{type: Number, required: true},
     reviewsCount:{type: Number, required: true},
-    lessionsCompleted:{type: Number, default:0},
+    lessonsCompleted:{type: Number, default:0},
     location:{type: String, required: true},
     availability:[{type: String, required: true}],
     languages:[{type: String}],

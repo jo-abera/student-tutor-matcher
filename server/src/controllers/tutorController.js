@@ -25,14 +25,17 @@ export const getAllTutors = async (req, res) => {
   }
 };
 
-export const getSingleTutor = async (req, res) => {
-  try {
-    const tutor = await getTutorById(req.params.id);
-    if (!tutor) {
-      return res.status(404).json({ message: "Tutor not found" });
+
+export const getSingleTutor = async (req, res)=>{
+    try{
+        const tutor = await getTutorsById(req.params.id);
+        if(!tutor){
+            return res.status(404).json({message: "Tutor not found"});
+
+        }
+        res.json(tutor);
+    }catch(_error){
+        res.status(500).json({message: "Failed to load tutor"});
     }
-    res.json(tutor);
-  } catch (_error) {
-    res.status(500).json({ message: "Failed to load tutor" });
-  }
-};
+    
+}
