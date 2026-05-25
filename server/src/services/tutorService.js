@@ -65,7 +65,7 @@ export const getTutors = async ({
       return withinRate && matchesSearch && matchesSubject && matchesAvailability;
     })
     .sort((a, b) => Number(b.featured) - Number(a.featured) || b.rating - a.rating);
-  console.log("Using DB:", isDbEnabled());
+ 
 };
 
 export const getTutorsById = async (id) => {
