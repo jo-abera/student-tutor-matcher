@@ -30,12 +30,32 @@ app.get("/", (req, res) => {
 export default app;
 */
 
-
+import cors from "cors";
 import express from "express";
+import bookingRoutes from "./routes/bookingRoutes.js";
 import tutorRoutes from "./routes/tutorRoutes.js";
+import { isDbEnabled } from "./services/tutorService.js";
 
 const app = express();
 
+const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
+
+app.use(
+  cors({
+    origin: CLIENT_URL,
+  })
+)
+
+app.use(express.json());
+
+app.get("/api/health", (_req, res)=>{
+  res.json({
+    ok:true,
+    mode: isDbEnabled() ? "Database Enabled" : "Database Disabled"
+  })
+})
+
 app.use("/api/tutors", tutorRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 export default app;
