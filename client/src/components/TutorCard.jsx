@@ -25,7 +25,10 @@ export default function TutorCard({ tutor }) {
 
         <div className="flex flex-wrap gap-2">
           {tutor.subjects.map((subject) => (
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
+            <span
+              key={subject}
+              className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700"
+            >
               {subject}
             </span>
           ))}
@@ -43,8 +46,8 @@ export default function TutorCard({ tutor }) {
             </p>
           </div>
           <Link
-            to={`/tutor/${tutor.id} || tutor._id}`}
-            className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 "
+            to={`/tutor/${tutor.id || tutor._id}`}
+            className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             View Profile
           </Link>

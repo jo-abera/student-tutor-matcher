@@ -10,8 +10,8 @@ const defaultFilters = {
   maxRate: '',
 };
 const subjectOptions = [
-  'math',
-  'SAT',
+  'Math',
+  'SAT Prep',
   'Algebra',
   'Physics',
   'Calculus',
@@ -24,7 +24,7 @@ const subjectOptions = [
 ];
 
 const availabilityOptions = [
-  'Weekninghts',
+  'Weeknights',
   'Saturday Morning',
   'Afternoons',
   'Sunday',
