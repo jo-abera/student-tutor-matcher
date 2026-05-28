@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import TutorCard from '../components/TutorCard';
+import { fetchTutors } from '../lib/api';
 
 const defaultFilters = {
   search: '',
