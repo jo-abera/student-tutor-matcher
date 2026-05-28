@@ -24,13 +24,13 @@ const subjectOptions = [
 ];
 
 const availabilityOptions = [
-  'Weekeninghts',
-  'Saturday Mornings',
+  'Weekninghts',
+  'Saturday Morning',
   'Afternoons',
-  'Sunday Mornings',
+  'Sunday',
   'Flexible',
   'Evenings',
-  'Weekends',
+  'Weekend',
 ];
 
 export default function HomePage() {
@@ -79,7 +79,7 @@ export default function HomePage() {
             </div>
             <div className="flex flex-wrap gap-4 text-sm text-slate-300">
               <span>4.8+ average tutor rating</span>
-              <span>Real-tme search filters</span>
+              <span>Real-time search filters</span>
               <span>Simple session booking</span>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl font-bold text-slate-900">Browse tutors</h2>
             <p className="text-slate-600">
-              {loading ? 'Loading...' : `${tutors.length}tutors available`}
+              {loading ? 'Loading...' : `${tutors.length} tutors available`}
             </p>
           </div>
         </div>
