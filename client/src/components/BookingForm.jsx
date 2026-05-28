@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { creatingBooking } from '../lib/api';
+import { createBooking } from '../lib/api';
 import { timeSlots } from '../data/timeSlots';
 
 const initialForm = {
   studentName: '',
   studentEmail: '',
   date: '',
-  timeSlote: timeSlots[0],
+  timeSlot: timeSlots[0],
   notes: '',
 };
 
