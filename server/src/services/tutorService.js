@@ -27,12 +27,15 @@ export const getTutors = async ({
   search = "",
   subject = "",
   availability = "",
-  minRate = 0,
-  maxRate = 500
+  minRate = "0",
+  maxRate = "500"
 }) => {
+  const parsedMinRate = minRate === "" ? 0 : Number(minRate);
+  const parsedMaxRate = maxRate === "" ? 500 : Number(maxRate);
+
   if (isDbEnabled()) {
     const filters = {
-      hourlyRate: { $gte: Number(minRate), $lte: Number(maxRate) }
+      hourlyRate: { $gte: Number(parsedMinRate), $lte: Number(parsedMaxRate) }
     };
 
     if (search) {
@@ -54,7 +57,7 @@ export const getTutors = async ({
 
   return seedTutors
     .filter((tutor) => {
-      const withinRate = tutor.hourlyRate >= Number(minRate) && tutor.hourlyRate <= Number(maxRate);
+      const withinRate = tutor.hourlyRate >= parsedMinRate && tutor.hourlyRate <= parsedMaxRate;
       const matchesSearch =
         !search ||
         [tutor.name, tutor.title, tutor.bio, ...tutor.subjects].some((value) =>
@@ -65,7 +68,6 @@ export const getTutors = async ({
       return withinRate && matchesSearch && matchesSubject && matchesAvailability;
     })
     .sort((a, b) => Number(b.featured) - Number(a.featured) || b.rating - a.rating);
- 
 };
 
 export const getTutorsById = async (id) => {
