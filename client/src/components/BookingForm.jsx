@@ -25,7 +25,7 @@ export default function BookingForm({ tutorId, tutorName, onSuccess }) {
     setSubmitting(true);
     setStatus({ type: '', message: '' });
     try {
-      const booking = await creatingBooking({ tutorId, ...form });
+      const booking = await createBooking({ tutorId, ...form });
       setStatus({
         type: 'success',
         message: `Session booked with ${tutorName}.`,
