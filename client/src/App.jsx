@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import TutorProfilePage from "./pages/TutorProfilePage";
+import TutorProfilePage from './pages/TutorProfilePage';
 
 //import TutorProfilepage from './pages/TutorProfilePage';
 
@@ -19,7 +19,7 @@ export default function App() {
       </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/tutors/:id" element={<TutorProfilePage />} />
+        <Route path="/tutor/:id" element={<TutorProfilePage />} />
       </Routes>
     </div>
   );
