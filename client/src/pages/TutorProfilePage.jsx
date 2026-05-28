@@ -1,27 +1,40 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import BookingForm from '../components/BookingForm';
 import { fetchBookings, fetchTutor } from '../lib/api';
 
 export default function TutorProfilePage() {
   const { id } = useParams();
-  const [tutor, set] = useState(null);
+  const [tutor, setTutor] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const loadData = async () => {
+      if (!id) {
+        setError('Invalid tutor ID');
+        setLoading(false);
+        return;
+      }
+
+      setLoading(true);
       try {
-        setLoading(true);
-        const [tutorData, bookingData] = await Promise.all([
-          fetchTutor(id),
-          fetchBookings(),
-        ]);
+        const tutorData = await fetchTutor(id);
         setTutor(tutorData);
+      } catch (err) {
+        console.error('Tutor load error:', err);
+        setError(`Could not load tutor profile: ${err.message}`);
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const bookingData = await fetchBookings();
         setBookings(bookingData.filter((booking) => booking.tutorId === id));
       } catch (err) {
-        setError("we couldn't load this tutor profile");
+        console.error('Bookings load error:', err);
+        setBookings([]);
       } finally {
         setLoading(false);
       }
