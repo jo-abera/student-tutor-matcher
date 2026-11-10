@@ -16,10 +16,12 @@ export const ensureSeedTutors = async () => {
     return;
   }
 
-  const count = await Tutor.countDocuments();
-  if (count === 0) {
-    await Tutor.insertMany(seedTutors);
-    //console.log("Seeded tutors to the database");
+  const existing = await Tutor.find().select("name");
+  const existingNames = new Set(existing.map((tutor) => tutor.name));
+  const missing = seedTutors.filter((tutor) => !existingNames.has(tutor.name));
+
+  if (missing.length > 0) {
+    await Tutor.insertMany(missing);
   }
 };
 

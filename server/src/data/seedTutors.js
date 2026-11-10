@@ -70,5 +70,113 @@ export const seedTutors = [
     image:
       "https://images.unsplash.com/photo-1525665363629-cdf85a703b50?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     featured: true
+  },
+  {
+    id: "tutor-5",
+    name: "Hana Bekele",
+    title: "Chemistry Tutor for High School Exams",
+    subjects: ["Chemistry", "Science"],
+    bio: "Breaks reactions, formulas, and lab concepts into short practice sets so students can prepare for tests without memorizing blindly.",
+    hourlyRate: 26,
+    rating: 4.8,
+    reviewsCount: 81,
+    lessonsCompleted: 260,
+    location: "Addis Ababa",
+    availability: ["Weeknights", "Saturday Morning"],
+    languages: ["English", "Amharic"],
+    responseTime: "Usually replies within 1 hour",
+    image:
+      "https://images.unsplash.com/photo-1530785602389-07594beb8b73?q=80&w=1887&auto=format&fit=crop",
+    featured: false
+  },
+  {
+    id: "tutor-6",
+    name: "Yonas Alemu",
+    title: "Biology Tutor for Secondary School",
+    subjects: ["Biology", "Science"],
+    bio: "Uses diagrams and past-paper questions to make cells, genetics, and human biology easier to remember.",
+    hourlyRate: 25,
+    rating: 4.6,
+    reviewsCount: 58,
+    lessonsCompleted: 190,
+    location: "Bahir Dar",
+    availability: ["Afternoons", "Sunday"],
+    languages: ["English", "Amharic"],
+    responseTime: "Usually replies within 3 hours",
+    image:
+      "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=1887&auto=format&fit=crop",
+    featured: false
+  },
+  {
+    id: "tutor-7",
+    name: "Meron Tadesse",
+    title: "History and Essay Writing Mentor",
+    subjects: ["History", "Essay Writing"],
+    bio: "Helps students build clear arguments, timelines, and source-based essays for history and humanities classes.",
+    hourlyRate: 22,
+    rating: 4.9,
+    reviewsCount: 47,
+    lessonsCompleted: 160,
+    location: "Remote",
+    availability: ["Flexible", "Weekend"],
+    languages: ["English", "Amharic"],
+    responseTime: "Usually replies within 2 hours",
+    image:
+      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1887&auto=format&fit=crop",
+    featured: true
+  },
+  {
+    id: "tutor-8",
+    name: "Abel Kebede",
+    title: "French and English Conversation Tutor",
+    subjects: ["French", "English"],
+    bio: "Runs speaking practice, grammar drills, and short writing tasks for students who want to use a new language with confidence.",
+    hourlyRate: 30,
+    rating: 4.7,
+    reviewsCount: 69,
+    lessonsCompleted: 240,
+    location: "Dire Dawa",
+    availability: ["Evenings", "Saturday Morning"],
+    languages: ["English", "French", "Amharic"],
+    responseTime: "Usually replies within 1 hour",
+    image:
+      "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1887&auto=format&fit=crop",
+    featured: false
+  },
+  {
+    id: "tutor-9",
+    name: "Liya Getachew",
+    title: "SAT Reading and Writing Coach",
+    subjects: ["SAT Prep", "English", "Essay Writing"],
+    bio: "Focuses on passage strategy, grammar rules, and timed practice so students improve scores without rushing.",
+    hourlyRate: 34,
+    rating: 4.9,
+    reviewsCount: 112,
+    lessonsCompleted: 380,
+    location: "Addis Ababa",
+    availability: ["Weeknights", "Weekend"],
+    languages: ["English"],
+    responseTime: "Usually replies within 30 minutes",
+    image:
+      "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?q=80&w=1887&auto=format&fit=crop",
+    featured: true
+  },
+  {
+    id: "tutor-10",
+    name: "Samuel Desta",
+    title: "Calculus and University Math Tutor",
+    subjects: ["Calculus", "Math", "Algebra"],
+    bio: "Guides first-year students through limits, derivatives, and problem sets with worked examples and weekly review.",
+    hourlyRate: 33,
+    rating: 4.8,
+    reviewsCount: 88,
+    lessonsCompleted: 310,
+    location: "Remote",
+    availability: ["Evenings", "Sunday"],
+    languages: ["English", "Amharic"],
+    responseTime: "Usually replies within 45 minutes",
+    image:
+      "https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=800",
+    featured: false
   }
 ];

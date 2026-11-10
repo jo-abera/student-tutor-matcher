@@ -21,6 +21,11 @@ const subjectOptions = [
   'JavaScript',
   'React',
   'Web Development',
+  'Chemistry',
+  'Biology',
+  'Science',
+  'History',
+  'French',
 ];
 
 const availabilityOptions = [
